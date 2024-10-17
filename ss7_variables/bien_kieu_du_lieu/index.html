@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 1 - Tính điểm trung bình -->
+    
+    <h1>Tính điểm trung bình</h1>
+    <form action="#">
+        <label for="physics">Vật Lý:</label>
+        <input type="number" id="physics" placeholder="Nhập điểm số">
+        <label for="chemistry">Hoá học:</label>
+        <input type="number" id="chemistry" placeholder="Nhập điểm số">
+        <label for="biology">Sinh học:</label>
+        <input type="number" id="biology" placeholder="Nhập điểm số">
+        <button onclick="showResult()">Hiển thị kết quả</button>
+        <p id="average"></p>
+        <p id="sum"></p>
+    </form>
+
+    <!-- Bài 2 - Chuyển đổi nhiệt độ --> 
+    
+    <h1>Chuyển đổi nhiệt độ</h1>
+    <form action="#">
+        <label for="celsius">Độ C (Celsius):</label>
+        <input type="number" id="celsius" placeholder="Nhập số">
+        <button onclick="transfer()">Hiển thị kết quả</button>
+        <p id="fahrenheit"></p>
+    </form>
+
+    <!-- Bài 3,4 - Tính diện tích, chu vi hình tròn -->
+
+    <h1>Tính diện tích hình tròn, chu vi hình tròn</h1>
+    <form action="#">
+        <label for="radius">Bán kính:</label>
+        <input type="number" id="radius" placeholder="Nhập số">
+        <button onclick="count()">Hiển thị kết quả</button>
+        <p id="area"></p>
+        <p id="perimeter"></p>
+    </form>
+
+    <script src="./script.js"></script>
+</body>
+</html>
