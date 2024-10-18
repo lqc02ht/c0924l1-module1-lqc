@@ -1,0 +1,25 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+th {
+    background-color: yellow;
+}
+.header th {
+    background-color: orange;
+}
+h1 {
+    text-align: center;
+    color: blue;
+}
+.info {
+    margin-left: 10%;
+    font-size: 16px;
+    color: blue;
+}
