@@ -1,0 +1,56 @@
+body {
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+th {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+}
+
+th:first-child {
+    background-color: red;
+}
+
+th:last-child {
+    background-color: blue;
+}
+
+td {
+    border: 1px solid #000;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.duong {
+    font-weight: bold;
+}
+
+.am {
+    font-size: 13px;
+    color: gray;
+    margin-left: 20px;
+}
+
+.chunhat {
+    color: red;
+}
+
+.thu7 {
+    color: blue;
+}
+
+caption {
+    margin: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+}
