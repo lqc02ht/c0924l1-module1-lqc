@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h2>Make Research Survey</h2>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <h6>What is your age range?</h6>
+    <input type="number" name="age" placeholder="18-24"> <br>
+    <h6>What is your yearly income range?</h6>
+    <input type="number" name="income" placeholder="$0 - $25,000"> <br>
+    <label for="gender">Gender</label> <br>
+    <input type="radio" name="gender" value="male"> Male <br>
+    <input type="radio" name="gender" value="female"> Female <br>
+    <h6>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h6>
+    <input type="checkbox" name="product" value="product1"> Product 1 <br>
+    <input type="checkbox" name="product" value="product2"> Product 2 <br>
+    <input type="checkbox" name="product" value="product3"> Product 3 <br>
+    <h6>How often would you use our new product?</h6>
+    <input type="radio" name="duration" value="day"> Daily <br>
+    <input type="radio" name="duration" value="week"> Week <br>
+    <input type="radio" name="duration" value="month"> Month <br>
+    <h6>What would you pay for the new product?</h6>
+    <table>
+        <tr>
+            <td><label for="dollar">$</label></td>
+            <td><input type="number" name="dollar"></td>
+            <td><label for="cent">.</label></td>
+            <td><input type="number" name="cent" id=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Dollars</td>
+            <td></td>
+            <td>Cents</td>
+        </tr>
+    </table>
+    <h6>What features would you like to see in the new product.</h6>
+    <textarea name="opinion" id="opinion">
+        
+    </textarea>
+    <h6>Please rate your level of aggreement with the following statements.</h6>
+    <table>
+        <th></th>
+        <th>Strongly Disagree</th>
+        <th>Disagree</th>
+        <th>Agree</th>
+        <tr>
+            <td>Our product are priced fairly.</td>
+            <td>
+                <input type="radio" name="click" value="1"> 1
+            </td>
+            <td>
+                <input type="radio" name="click" value="2"> 2
+            </td>
+            <td>
+                <input type="radio" name="click" value="3"> 3
+            </td>
+        </tr>
+        <tr>
+            <td>Our products are high quality.</td>
+            <td>
+                <input type="radio" name="click" value="2"> 2
+            </td>
+            <td>
+                <input type="radio" name="click" value="3"> 3
+            </td>
+        </tr>
+        <tr>
+            <td>
+                You would recommend our product to a friend or coworker.
+            </td>
+            <td>
+                <input type="radio" name="click" value="2"> 2
+            </td>
+            <td>
+                <input type="radio" name="click" value="3"> 3
+            </td>
+        </tr>
+    </table>
+    <input type="submit" name="submit" id="submit" value="Submit">
+</body>
+</html>
