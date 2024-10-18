@@ -1,0 +1,19 @@
+table {
+    border: 2px solid orange;
+    border-collapse: collapse;
+}
+td {
+    width: 100px;
+    height: 100px;
+}
+.black {
+    background-color: black;
+}
+.white {
+    background-color: white;
+}
+.edge {
+    background-color: orange;
+    text-align: center;
+    font-weight: bold;
+}
