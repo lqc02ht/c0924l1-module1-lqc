@@ -1,0 +1,34 @@
+.container {
+    width: 400px;
+    background-color: #ffffcc;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    background-color: #ccffcc;
+    padding: 10px;
+    color: blue;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+input[type="submit"], input[type="reset"]{
+    text-align: center;
+    margin-top: 10px;
+}

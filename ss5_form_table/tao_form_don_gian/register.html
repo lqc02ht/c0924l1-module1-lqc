@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Học Viên</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+    <div class="container">
+        <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+        <form action="#">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" name="fullname"> <br>
+                <label for="birth">Ngày sinh:</label>
+                <input type="date" id="birth" name="birth"> <br>
+                <label for="gender">Giới tính:</label>
+                <input type="radio" name="gender" value="Nam"> Nam
+                <input type="radio" name="gender" value="Nữ"> Nữ <br>
+                <label for="address">Địa chỉ:</label> <br>
+                <textarea id="address" name="address"></textarea> <br>
+                <label for="class">Lớp:</label> <br>
+                <select>
+                    <option value="">— Chọn lớp —</option>
+                    <option value="lop1">Lớp 10</option>
+                    <option value="lop2">Lớp 11</option>
+                    <option value="lop3">Lớp 12</option>
+                    <option value="lop3">Sinh viên</option>
+                </select>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"> <br>
+                <label for="phone">Điện thoại:</label>
+                <input type="text" id="phone" name="phone"> <br>
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+        </form>
+    </div>
+</body>
+</html>
