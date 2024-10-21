@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Lấy thông tin nhiệt độ! -->
+    <script>
+        let temp = +prompt("Nhập vào nhiệt độ:");
+        while (1) {
+            if (temp > 100) {
+            temp = +prompt("Hãy giảm nhiệt độ:");
+            } else if (temp < 20) {
+            temp = +prompt("Hãy tăng nhiệt độ:");
+            } else {
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
