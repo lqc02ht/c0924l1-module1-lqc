@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- in hình tam giác vuông -->
+</body>
+<script>
+    // hình tam giác 1
+    // *
+    // **
+    // ***
+    // ****
+    // *****
+    let triangle1 = '';
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+            triangle1 += '*';
+        }
+        triangle1 += '\n';
+    }
+    console.log(triangle1);
+
+    // hình tam giác 2
+    // *****
+    // ****
+    // ***
+    // **
+    // *
+    let triangle2 = '';
+    for (let i = 5; i > 0; i--) {
+        for (let j = 1; j <= i; j++) {
+            triangle2 += '*';
+        }
+        triangle2 += '\n';
+    }
+    console.log(triangle2);
+
+    // hình tam giác 3
+    //     *
+    //    **
+    //   ***
+    //  ****
+    // *****
+    let triangle3 = '';
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5 - i; j++) {
+            triangle3 += ' ';
+        }
+        for (let k = 1; k <= i; k++) {
+            triangle3 += '*';
+        }
+        triangle3 += '\n';
+    }
+    console.log(triangle3);
+
+    // hình tam giác 4
+    // *****
+    //  ****
+    //   ***
+    //    **
+    //     *
+    let triangle4 = '';
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 0; j < 5 - i; j++) {
+            triangle4 += ' ';
+        }
+        for (let k = 0; k < i; k++) {
+            triangle4 += '*';
+        }
+        triangle4 += '\n';
+    }
+    console.log(triangle4);
+</script>
+</html>

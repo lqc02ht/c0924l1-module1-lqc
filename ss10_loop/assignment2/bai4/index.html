@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- In hình chữ nhật
+    *********************
+    *                   *
+    *                   *
+    *                   *
+    *                   *
+    *                   *
+    *                   *
+    ********************* 
+    -->
+    <script>
+        let rectangle = '';
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 20; j++) {
+                if (i === 0 || i === 7) {
+                    rectangle += '*';
+                } else {
+                    if (j === 0 || j === 19) {
+                        rectangle += '*';
+                    } else {
+                        rectangle += ' ';
+                    }
+                }
+            }
+            rectangle += '\n';
+        }
+        console.log(rectangle);
+    </script>
+</body>
+</html>

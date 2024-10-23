@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tính giai thừa của 1 số nguyên dương -->
+    <script>
+        let n = +prompt("Nhập vào số nguyên dương:");
+        if (isNaN(n) || n < 0) {
+            while (isNaN(n) || n < 0) {
+                n = +prompt("Vui lòng nhập lại:");
+            }
+        }
+        let factorial = 1;
+        if (n === 0) {
+            document.write(`Giai thừa của ${n} là: ${factorial}`);
+        } else {
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            document.write(`Giai thừa của ${n} là: ${factorial}`);
+        }
+    </script>
+</body>
+</html>
