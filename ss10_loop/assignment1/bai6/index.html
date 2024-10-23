@@ -8,14 +8,15 @@
 <body>
     <!-- Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên -->
      <script>
-        let count = 0;
-        for (let i = 7; i <= 210; i += 7) {
-            if ((i % 7) === 0) {
-                console.log(i);
-                count += i;
-            }
+        let count = 1;
+        let sum = 0;
+        let n = 7;
+        while (count <= 30) {
+            sum += n;
+            count ++;
+            n += 7;
         }
-        document.write("Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là: " + count);
+        document.write("Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là: " + sum);
      </script>
 </body>
 </html>
