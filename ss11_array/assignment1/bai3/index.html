@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tìm phần tử lớn nhất và tính giá trị trung bình của các phần tử trong mảng -->
+    <script>
+        let numbers = [9, 10, 5, -7, 43, 98, -4, 120, 22, 54, 23, 100];
+        let max = 0;
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
+            sum += numbers[i];
+        }
+        alert(`Phần tử lớn nhất mảng là ${max} và có trung bình cộng của các phần tử là ${sum/numbers.length}.`);
+    </script>
+</body>
+</html>

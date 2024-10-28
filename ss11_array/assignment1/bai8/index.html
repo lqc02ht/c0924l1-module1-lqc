@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Sắp xếp mảng giảm dần -->
+    <script>
+        let size = +prompt('Nhập vào số lượng phần tử của mảng:');
+        let numbers = new Array(size);
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = +prompt(`Nhập vào phần tử thứ ${i}:`);
+        }
+        alert(numbers); // Trước khi sắp xếp
+        for (let i = 0; i < numbers.length - 1; i++) {
+            for (let j = 0; j < numbers.length - i - 1; j++) {
+                if (numbers[j] < numbers[j + 1]) {
+                    [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]]
+                }
+            }
+        }
+        alert(numbers); // Sau khi sắp xếp theo thứ tự giảm dần
+    </script>
+</body>
+</html>

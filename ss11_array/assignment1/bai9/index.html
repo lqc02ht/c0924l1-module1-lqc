@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Khai báo mảng c là các phần tử được nối giữa 2 bảng a và b -->
+    <script>
+        // Khai báo mảng A
+        let sizeA = +prompt('Nhập vào số lượng phần tử của mảng A:');
+        let arrayA = new Array(sizeA);
+        for (let i = 0; i < arrayA.length; i++) {
+            arrayA[i] = +prompt(`Nhập vào phần tử thứ ${i}:`);
+        }
+        // Khai báo mảng B
+        let sizeB = +prompt('Nhập vào số lượng phần tử của mảng B:');
+        let arrayB = new Array(sizeB);
+        for (let i = 0; i < arrayB.length; i++) {
+            arrayB[i] = +prompt(`Nhập vào phần tử thứ ${i}:`);
+        }
+        // Khai báo mảng C
+        let arrayC = [];
+        for (let i = 0; i < arrayA.length; i++) {
+            arrayC[i] = arrayA[i];
+        }
+        let lastIndex = arrayA.length - 1; 
+        for (let i = 0; i < arrayB.length; i++) {
+            arrayC[lastIndex] = arrayB[i];
+            lastIndex++;
+        }
+        alert(arrayC);
+    </script>
+</body>
+</html>

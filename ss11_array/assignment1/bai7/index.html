@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Kiểm tra số V có trong mảng không, nếu có thì xoá phần tử đó -->
+    <script>
+        let size = +prompt('Nhập vào số lượng phần tử của mảng:');
+        let numbers = new Array(size);
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = +prompt(`Nhập vào phần tử thứ ${i}:`);
+        }
+        let V = +prompt('Nhập vào số V:');
+        let index = 0;
+        // Kiểm tra V trong mảng và nếu có V thì đẩy các phần tử sau V về phía đầu mảng
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] !== V) {
+                numbers[index] = numbers[i];
+                index++;
+            }
+        }
+        // Gán các vị trí còn lại trong mảng bằng 0
+        for (let i = index; i < numbers.length; i++) {
+            numbers[i] = 0;
+        }
+        alert(numbers);
+    </script>
+</body>
+</html>

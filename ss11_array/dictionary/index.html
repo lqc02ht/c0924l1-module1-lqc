@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Từ điển đơn giản -->
+    <label for = "searchWord">Nhập từ:</label>
+    <input type = "text" name = "word" id = "searchWord">
+    <button type = "button" onclick = "translateWord()">Dịch</button>
+    <p id = "result"></p>
+    <script>
+    function translateWord() {
+        const englishArray = ['cake', 'noodles', 'rice', 'fried chicken', 'bread', 'sausages'];
+        const vietnameseArray = ['bánh ngọt', 'mỳ', 'cơm', 'gà rán', 'bánh mì', 'xúc xích'];
+        let searchWord = document.getElementById("searchWord").value.toLowerCase();
+        let index = -1;
+        for (let i = 0; i < englishArray.length; i++) {
+            if (searchWord === englishArray[i]) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            document.getElementById("result").innerText = 'Không có trong từ điển!';
+        } else {
+            document.getElementById("result").innerText = `${vietnameseArray[index]}`;
+        }
+    }
+    </script>
+</body>
+</html>

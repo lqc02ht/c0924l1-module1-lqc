@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Nhập vào n số phần tử mảng và đảo ngược mảng -->
+    <script>
+        let size = +prompt('Nhập vào số lượng phần tử của mảng:');
+        let numbers = new Array(size);
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = +prompt(`Nhập vào phần tử thứ ${i}:`);
+        }
+        alert(numbers);
+        // Đảo ngược mảng
+        let start = 0;
+        let end = numbers.length - 1;
+        let swap;
+        while (start < end) {
+            swap = numbers[start];
+            numbers[start] = numbers[end];
+            numbers[end] = swap;
+            start ++;
+            end --;
+        }
+        alert(numbers);
+    </script>
+</body>
+</html>
