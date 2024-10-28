@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Đếm số từ trong chuỗi -->
+    <script>
+        let sequenceString = prompt('Nhập vào chuỗi:');
+        let words = sequenceString.match(/\S+/g);
+        if (words.length !== 0) {
+            alert(`Có tất cả ${words.length} từ trong chuỗi bạn nhập vào.`);
+        } else {
+            alert('Không có từ nào trong chuỗi bạn nhập vào.');
+        }
+    </script>
+</body>
+</html>
