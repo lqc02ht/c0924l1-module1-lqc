@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Chuyển ký tự in thường thành in hoa và ngược lại -->
+    <script>
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let sequence = prompt('Nhập vào chuỗi:');
+        let result = '';
+        for (let i = 0; i < sequence.length; i++) {
+            if (LOWER.indexOf(sequence[i]) !== -1) {
+                result += sequence[i].toUpperCase();
+            } else if (UPPER.indexOf(sequence[i]) !== -1) {
+                result += sequence[i].toLowerCase();
+            } else {
+                result += ' ';
+            }
+        }
+        alert(result);
+    </script>
+</body>
+</html>
