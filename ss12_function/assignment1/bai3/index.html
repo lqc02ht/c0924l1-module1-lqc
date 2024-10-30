@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết hàm kiểm tra 2 số nhập vào -->
+    <script>
+        let number1, number2;
+        while(true) {
+            number1 = +prompt('Nhập vào số thứ 1:');
+            number2 = +prompt('Nhập vào số thứ 2:');
+            if (number1 === number2) {
+                alert('Nhập lại 2 số không bằng nhau!');
+            } else {
+                break;
+            }    
+        }
+        alert(check(number1, number2));
+        function check(number1, number2) {
+            if (number1 > number2) {
+                return 'Số thứ 1 lớn hơn số thứ 2!';
+            } else {
+                return number1 + number2;
+            }
+        }
+    </script>
+</body>
+</html>

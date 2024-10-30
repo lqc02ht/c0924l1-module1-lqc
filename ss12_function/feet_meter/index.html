@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Chuyển đổi feet và meters -->
+    <script>
+        let foot = +prompt('Nhập foot:');
+        let meter = +prompt('Nhập meter:');
+        document.write(`${foot} foot = ${footToMeter(foot)} meter <br>`);
+        document.write(`${meter} meter = ${meterToFoot(meter)} foot`);
+        function footToMeter(foot) {
+            return foot * 0.305;
+        }
+        function meterToFoot(meter) {
+            return meter * 3.279;
+        }
+        </script>
+</body>
+</html>

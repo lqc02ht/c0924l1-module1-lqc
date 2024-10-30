@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết hàm kiểm tra ngôi sao -->
+    <script>
+        let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let constells = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        let inputStars = prompt('Nhập vào ngôi sao:');
+        alert(checkStars(inputStars));
+        function checkStars(str) {
+            let count = 0;
+            for (let i = 0; i < stars.length; i++) {
+                if (stars[i] === str) {
+                    return `Chòm sao của ngôi sao là: ${constells[i]}`;
+                } else {
+                    count ++;
+                }
+            }
+            if (count !==0) {
+                return 'Ngôi sao nhập vào chưa đúng, vui lòng nhập lại!';
+            }
+        }
+    </script>
+</body>
+</html>
