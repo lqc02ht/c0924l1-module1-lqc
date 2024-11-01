@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Đổi chỗ 2 số -->
+     <script>
+        let number1 = +prompt('Nhập vào số thứ 1:');
+        let number2 = +prompt('Nhập vào số thứ 2:');
+        swap(number1, number2);
+        function swap(n1, n2) {
+            let sw = n1;
+            n1 = n2;
+            n2 = sw;
+            alert(`Số thứ 1 bây giờ là ${n1}`);
+            alert(`Số thứ 2 bây giờ là ${n2}`);
+        }
+     </script>
+</body>
+</html>

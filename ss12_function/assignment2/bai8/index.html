@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Đảo ngược mảng -->
+    <script>
+        let size = +prompt('Nhập vào số lượng phần tử mảng nhập vào:');
+        let arr = new Array(size);
+        for (let i = 0; i < size; i++) {
+            arr[i] = +prompt(`Nhập vào phần tử thứ ${i}:`);
+        }
+        function reverse(array) {
+            let sw = [];
+            for (let i = array.length - 1; i >= 0; i--) {
+                sw.push(array[i]);
+            }
+            return sw;
+        }
+        arr = reverse(arr);
+        console.log(arr);
+    </script>
+</body>
+</html>

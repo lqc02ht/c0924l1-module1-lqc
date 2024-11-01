@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Kiểm tra số nguyên dương -->
+    <script>
+        let number = +prompt('Nhập vào số n:');
+        function isPositive(n) {
+            if (n > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (isPositive(number)) {
+            alert('Số đấy là số nguyên dương.');
+        } else {
+            alert('Số đấy không phải là số nguyên dương.');
+        }
+    </script>
+</body>
+</html>

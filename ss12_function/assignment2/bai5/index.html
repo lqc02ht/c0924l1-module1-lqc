@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tìm số nhỏ nhất trong 3 số -->
+    <script>
+        let number1 = +prompt('Nhập vào số a:');
+        let number2 = +prompt('Nhập vào số b:');
+        let number3 = +prompt('Nhập vào số c:');
+        function findMin(a, b, c) {
+            let min = a;
+            if (min > b) {
+                min = b;
+            }
+            if (min > c) {
+                min = c;
+            }
+            return min;
+        }
+        alert(`Số nhỏ nhất trong 3 số là ${findMin(number1, number2, number3)}`);
+    </script>
+</body>
+</html>

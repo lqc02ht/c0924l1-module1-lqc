@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Kiểm tra ký tự số -->
+    <script>
+        let number = prompt('Nhập ký tự cần kiểm tra:');
+        function isNumber(n) {
+            if (n >= '0' && n <= '9') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (isNumber(number)) {
+            alert('Ký tự nhập vào là ký tự số.');
+        } else {
+            alert('Ký tự nhập vào không phải là ký tự số.');
+        }
+    </script>
+</body>
+</html>

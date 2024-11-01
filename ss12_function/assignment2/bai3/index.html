@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tính giai thừa -->
+    <script>
+        let number = +prompt('Nhập vào số n:');
+        function factorial(n) {
+            let f = 1;
+            if (n === 0) {
+                return f;
+            } else {
+                for (let i = 1; i <= n; i++) {
+                    f *= i
+                }
+                return f;
+            }
+        }
+        console.log(factorial(number));
+    </script>
+</body>
+</html>
