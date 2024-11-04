@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            constructor(celsius) {
+                this.celsius = celsius;
+            }
+            convertFahrenheit(celsius) {
+                return celsius * 9/5 + 32;
+            }
+            convertKelvin(celsius) {
+                return celsius + 273;
+            }
+            getCelsius() {
+                return this.celsius;
+            }
+        }
+        let celsius1 = new Temperature(25);
+        console.log(`Đổi độ C sang độ F: ${celsius1.getCelsius()}°C = ${celsius1.convertFahrenheit(celsius1.getCelsius())}°F.
+                \nĐổi độ C sang độ K: ${celsius1.getCelsius()}°C = ${celsius1.convertKelvin(celsius1.getCelsius())}°K.`);
+    </script>
+</body>
+</html>
