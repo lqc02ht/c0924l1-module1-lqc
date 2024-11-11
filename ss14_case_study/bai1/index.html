@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nhập và hiển thị mảng
+        let size = +prompt('Nhập số phần tử của mảng:');
+        let numberArray = new Array(size);
+        for(let i = 0; i < numberArray.length; i++) {
+            numberArray[i] = +prompt(`Nhập phần tử thứ ${i}:`);
+        }
+        console.log(numberArray);
+        // Kiểm tra mảng tăng dần
+        function checkArray(array) {
+            if (array.length < 2) {
+                console.log('NO');
+                return;
+            }
+            const gap = array[1] - array[0];
+            if (gap <= 0) {
+                console.log('NO');
+                return;
+            }
+            for(let i = 1; i < array.length - 1; i++) {
+                if ((array[i + 1] - array[i]) !== gap) {
+                    console.log('NO');
+                    return;
+                } 
+            }
+            console.log('OK');
+        }
+        checkArray(numberArray);
+    </script>
+</body>
+</html>
