@@ -9,6 +9,9 @@
     <script>
         // Nhập và hiển thị mảng
         let size = +prompt('Nhập số phần tử của mảng:');
+        while(size > 20) {
+            size = +prompt('Nhập lại số phần tử của mảng:');
+        }
         let numberArray = new Array(size);
         for(let i = 0; i < numberArray.length; i++) {
             numberArray[i] = +prompt(`Nhập phần tử thứ ${i}:`);
