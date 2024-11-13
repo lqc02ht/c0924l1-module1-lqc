@@ -9,7 +9,7 @@
     <script>
         // Nhập và hiển thị mảng
         let size = +prompt('Nhập số phần tử của mảng:');
-        while(size > 20 || size < 0  || !Number.isInteger(size)) {
+        while(size % 2 === 1 || size < 2  || !(size % 1 === 0)) {
             size = +prompt('Nhập lại số phần tử của mảng:');
         }
         let numberArray = [];
@@ -17,19 +17,13 @@
             numberArray.push(+prompt(`Nhập phần tử thứ ${i + 1}:`));
         }
         console.log(numberArray);
-        // Kiểm tra mảng tăng dần
         checkArray(numberArray);
         function checkArray(array) {
-            const gap = array[1] - array[0];
-            if (gap <= 0 || array.length < 2) {
-                console.log('NO');
-                return;
-            }
-            for(let i = 1; i < array.length - 1; i++) {
-                if ((array[i + 1] - array[i]) !== gap) {
+            for (let i = 0; i < array.length; i += 2) {
+                if (array[i] > array[i + 1]) {
                     console.log('NO');
                     return;
-                } 
+                }
             }
             console.log('OK');
         }
