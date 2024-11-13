@@ -9,7 +9,7 @@
     <script>
         // Nhập và hiển thị mảng
         let size = +prompt('Nhập số phần tử của mảng:');
-        while(size < 0 || !Number.isInteger(size)) {
+        while(size < 0 || !(size % 1 === 0)) {
             size = +prompt('Nhập lại số phần tử của mảng:');
         }
         let numberArray = [];
@@ -47,6 +47,7 @@
                 console.log('NO');
             }
         }
+        // Kiểm tra 2 mảng bằng nhau
         function equalArray(arr1, arr2) {
             if (arr1.length !== arr2.length) {
                 return false;
