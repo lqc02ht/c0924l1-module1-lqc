@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt('Nhập phân số:');
+        checkFraction(str);
+        // Kiểm tra phân số
+        function checkFraction(input) {
+            // Kiểm tra có dấu /
+            if (!input.includes('/')) {
+                console.log('Không phải là phân số');
+                return;
+            }
+            let part = input.split('/');
+            // Kiểm tra nếu nhiều hơn 1 dấu / hoặc tử số rỗng  
+            if (part.length !== 2 || part[0] === '') {
+                console.log('Không phải là phân số');
+                return;
+            }
+            // loại bỏ khoảng trống và chuyển tử, mẫu sang kiểu số
+            let number1 = Number(part[0].trim());
+            let number2 = Number(part[1].trim());
+            // kiểm tra tử, mẫu số là số nguyên hợp lệ
+            if (!Number.isInteger(number1) || !Number.isInteger(number2) || number2 === 0) {
+                console.log('Không phải là phân số');
+                return;
+            }
+            // nếu tử chia hết mẫu thì in ra số
+            if (number1 % number2 === 0) {
+                console.log(number1/number2);
+            } else { // nếu không in ra phân số tối giản
+                let div = gcd(Math.abs(number1), Math.abs(number2));
+                if (number1 < 0 || number2 < 0) {
+                    console.log(`-${Math.abs(number1)/div}/${Math.abs(number2)/div}`);
+                } else {
+                    console.log(`${number1/div}/${number2/div}`);
+                }
+            }
+        }
+        // hàm tìm UCLN của 2 số
+        function gcd(a, b) {
+            if (b === 0) {
+                return a;
+            }
+            return gcd(b, a % b);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findMaxNumber(number) {
+            if (number < 1000 || number > 9999) {
+                console.log(-1);
+            } else {
+                let str = number.toString();
+                str = str.split('').sort().join('');
+                let result = '';
+                for (let i = str.length - 1; i >= 1; i--) {
+                    result += str[i];
+                }
+                console.log(result);
+            }
+        } 
+    </script>
+</body>
+</html>
