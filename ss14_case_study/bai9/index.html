@@ -8,9 +8,9 @@
 <body>
     <script>
         // Nhập và hiển thị mảng
-        let size = +prompt('Nhập số phần tử của mảng:');
+        let size = prompt('Nhập số phần tử của mảng:');
         while(size % 2 === 1 || size < 2  || !(size % 1 === 0)) {
-            size = +prompt('Nhập lại số phần tử của mảng:');
+            size = prompt('Nhập lại số phần tử của mảng:');
         }
         let numberArray = [];
         for (let i = 0; i < size; i++) {
