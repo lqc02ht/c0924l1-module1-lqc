@@ -7,10 +7,20 @@
 </head>
 <body>
     <script>
+        let n1 = 9179;
+        let n2 = 555;
+        let n3 = 0;
+        let n4 = 10000;
+        let n5 = 1234;
+        alert(findMaxNumber(n1));
+        alert(findMaxNumber(n2));
+        alert(findMaxNumber(n3));
+        alert(findMaxNumber(n4));
+        alert(findMaxNumber(n5));
         // In ra số có 3 chữ số lớn nhất được tạo từ số có 4 chữ số nhập vào
         function findMaxNumber(number) {
             if (number < 1000 || number > 9999) {
-                console.log(-1);
+                return -1;
             } else {
                 let str = number.toString();
                 str = str.split('').sort().join('');
@@ -18,7 +28,7 @@
                 for (let i = str.length - 1; i >= 1; i--) {
                     result += str[i];
                 }
-                console.log(result);
+                return result;
             }
         } 
     </script>

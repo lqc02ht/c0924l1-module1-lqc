@@ -16,22 +16,22 @@
         for (let i = 0; i < size; i++) {
             numberArray.push(+prompt(`Nhập phần tử thứ ${i + 1}:`));
         }
-        console.log(numberArray);
+        alert(numberArray);
         // Kiểm tra mảng tăng dần
         checkArray(numberArray);
         function checkArray(array) {
             const gap = array[1] - array[0];
             if (gap <= 0 || array.length < 2) {
-                console.log('NO');
+                alert('NO');
                 return;
             }
             for(let i = 1; i < array.length - 1; i++) {
                 if ((array[i + 1] - array[i]) !== gap) {
-                    console.log('NO');
+                    alert('NO');
                     return;
                 } 
             }
-            console.log('OK');
+            alert('OK');
         }
     </script>
 </body>

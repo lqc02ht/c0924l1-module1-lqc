@@ -7,15 +7,17 @@
 </head>
 <body>
     <script>
-        // Kiểm tra các ký tự nguyên âm của 1 chuỗi
+        // Nhập và kiểm tra chuỗi
         let string1 = prompt('Nhập chuỗi cần kiểm tra:');
         alert(checkString(string1));
+        // Hàm kiểm tra các ký tự nguyên âm của 1 chuỗi
         function checkString(str) {
             let vowels = 'ueoaiUEOAI';
             let array = [];
+            let lower = '';
             for (let i = 0; i < str.length; i++) {
                 if (vowels.indexOf(str[i]) !== -1) {
-                    let lower = str[i].toLocaleLowerCase();
+                    lower = str[i].toLowerCase();
                     if (!array.includes(lower)) {
                         array.push(lower);
                     }

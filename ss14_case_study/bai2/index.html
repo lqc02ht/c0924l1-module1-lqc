@@ -10,13 +10,13 @@
         // Kiểm tra tam giác vuông
         function checkTriangle(a, b, c) {
             if (a <= 0 || b <= 0 || c <= 0) {
-                console.log('Không phải là cạnh của tam giác');
+                alert('Không phải là cạnh của tam giác');
             } else if (a + b <= c || b + c <= a || c + a <= b) {
-                console.log('Không phải là cạnh của tam giác');
+                alert('Không phải là cạnh của tam giác');
             } else if (a*a + b*b === c*c || b*b + c*c === a*a || c*c + a*a === b*b) {
-                console.log('Là 3 cạnh của 1 tam giác vuông');
+                alert('Là 3 cạnh của 1 tam giác vuông');
             } else {
-                console.log('Chỉ là 3 cạnh của 1 tam giác');
+                alert('Chỉ là 3 cạnh của 1 tam giác');
             }
         }
     </script>

@@ -7,28 +7,31 @@
 </head>
 <body>
     <script>
+        let arr1 = [1, 2, 3, 5, 9];
+        let arr2 = ['a', 'b', 'c', 'd', 'e'];
+        let arr3 = [1, 'f', 3, 'g', 9];
+        alert(checkArray(arr1));
+        alert(checkArray(arr2));
+        alert(checkArray(arr3));
         // Kiểm tra mảng số hay mảng ký tự
         function checkArray(array) {
-            let hasNum = false;
-            let hasStr = false;
+            let countNum = 0;
+            let countChar = 0;
             for (let i = 0; i < array.length; i++) {
                 if (typeof(array[i]) == 'number') {
-                    hasNum = true;
+                    countNum++;
                 }
                 if (typeof(array[i]) == 'string') {
-                    hasStr = true;
-                }
-                if (hasNum && hasStr) {
-                return -1;
+                    countChar++;
                 }
             }
-            if (hasNum) {
+            if (countNum === array.length) {
                 return 1;
-            } else if (hasStr) {
+            } else if (countChar === array.length) {
                 return 0;
             } else {
-                return null;
-            }
+                return -1;
+            }    
         }
     </script>
 </body>

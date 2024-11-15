@@ -7,45 +7,56 @@
 </head>
 <body>
     <script>
+        let f = '';
+        while(1) {
+            f = prompt('Nhập phân số:');
+            find(f);
+        } 
         // Kiểm tra phân số
         function find(input) {
             // Kiểm tra có dấu /
             if (!input.includes('/')) {
-                console.log('Không phải là phân số');
+                alert('Không phải là phân số');
                 return;
             }
             let part = input.split('/');
             // Kiểm tra nếu nhiều hơn 1 dấu / hoặc tử số rỗng  
             if (part.length !== 2 || part[0] === '') {
-                console.log('Không phải là phân số');
+                alert('Không phải là phân số');
                 return;
             }
             // loại bỏ khoảng trống và chuyển tử, mẫu sang kiểu số
             let number1 = Number(part[0].trim());
             let number2 = Number(part[1].trim());
             // kiểm tra tử, mẫu số là số nguyên hợp lệ
-            if (!Number.isInteger(number1) || !Number.isInteger(number2) || number2 === 0) {
-                console.log('Không phải là phân số');
+            if (!(number1 % 1 === 0) || !(number2 % 1 === 0) || number2 === 0) {
+                alert('Không phải là phân số');
                 return;
             }
             // nếu tử chia hết mẫu thì in ra số
             if (number1 % number2 === 0) {
-                console.log(number1/number2);
+                alert(number1/number2);
             } else { // nếu không in ra phân số tối giản
-                let div = gcd(Math.abs(number1), Math.abs(number2));
+                let divisor = gcd(number1, number2);
                 if (number1 < 0 || number2 < 0) {
-                    console.log(`-${Math.abs(number1)/div}/${Math.abs(number2)/div}`);
+                    alert(`-${Math.abs(number1)/divisor}/${Math.abs(number2)/divisor}`);
                 } else {
-                    console.log(`${number1/div}/${number2/div}`);
+                    alert(`${number1/divisor}/${number2/divisor}`);
                 }
             }
         }
         // hàm tìm UCLN của 2 số
         function gcd(a, b) {
-            if (b === 0) {
-                return a;
+            a = Math.abs(a);
+            b = Math.abs(b);
+            let min = a < b ? a : b;
+            let result = 1;
+            for (let i = 2; i <= min; i++) {
+                if (a % i === 0 && b % i === 0) {
+                    result = i;
+                }
             }
-            return gcd(b, a % b);
+            return result;
         }
     </script>
 </body>

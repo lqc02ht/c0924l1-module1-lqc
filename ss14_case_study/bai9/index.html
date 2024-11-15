@@ -16,17 +16,17 @@
         for (let i = 0; i < size; i++) {
             numberArray.push(+prompt(`Nhập phần tử thứ ${i + 1}:`));
         }
-        console.log(numberArray);
-        // Kiểm tra các cặp số của mảng
+        alert(numberArray);
+        // Hàm kiểm tra các cặp số của mảng
         checkArray(numberArray);
         function checkArray(array) {
             for (let i = 0; i < array.length; i += 2) {
                 if (array[i] > array[i + 1]) {
-                    console.log('NO');
+                    alert('NO');
                     return;
                 }
             }
-            console.log('OK');
+            alert('OK');
         }
     </script>
 </body>
