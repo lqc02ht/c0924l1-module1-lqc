@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Danh sách sinh viên</h3>
+    <button onclick="addStudent()">Thêm mới học viên</button>
+    <button onclick="editInfor()">Sửa thông tin học viên</button>
+    <button onclick="deleteStudent()">Xoá học viên</button>
+    <p id="display"></p>
+    <script>
+        class Student {
+            constructor(id, name, grade, email, birthdate, module) {
+                this.id = id;
+                this.name = name;
+                this.grade = grade;
+                this.email = email;
+                this.birthdate = birthdate;
+                this.module = module;
+            }
+        }
+        let student1 = new Student('HV-0001', 'Nguyễn Văn A', 'C1022G1', 'nguyenvana@gmail.com', '01/01/2024', 1);
+        let student2 = new Student('HV-0002', 'Nguyễn Văn B', 'C1122G1', 'nguyenvanb@gmail.com', '02/02/2024', 2);
+        let student3 = new Student('HV-0003', 'Nguyễn Văn C', 'C1222G1', 'nguyenvanc@gmail.com', '03/03/2024', 3);
+        let studentList = [student1, student2, student3];
+        display();
+        function display() {
+            let tableInfo = `<table border="1" style="border-collapse: collapse; text-align: center;">
+                <tr>
+                    <th>Mã học viên</th>
+                    <th>Tên</th>
+                    <th>Lớp</th>
+                    <th>Email</th>
+                    <th>Ngày Sinh</th>
+                    <th>Module</th>
+                </tr>`;
+            for (let i = 0; i < studentList.length; i++) {
+                tableInfo += 
+                `<tr>
+                    <td>${studentList[i].id}</td>
+                    <td>${studentList[i].name}</td>
+                    <td>${studentList[i].grade}</td>
+                    <td>${studentList[i].email}</td>
+                    <td>${studentList[i].birthdate}</td>
+                    <td>${studentList[i].module}</td>
+                </tr>`;
+            }
+            tableInfo += `</table><br>`;
+            document.getElementById('display').innerHTML = tableInfo;
+        }
+        function addStudent() {
+            let newId = prompt('Nhập id của sinh viên:');
+            while(!isValidId(newId)) {
+                newId = prompt('Nhập lại id của sinh viên:');
+            }
+            let newName = prompt('Nhập tên của sinh viên:');
+            while(!isValidName(newName)) {
+                newName = prompt('Nhập lại tên của sinh viên:');
+            }
+            let newGrade = prompt('Nhập lớp học của sinh viên:');
+            let newEmail = prompt('Nhập Email của sinh viên:');
+            let newBirthdate = prompt('Nhập ngày sinh của sinh viên:');
+            while(!isValidBirthdate(newBirthdate)) {
+                newBirthdate = prompt('Nhập lại ngày sinh của sinh viên:');
+            }
+            let newModule = prompt('Nhập module của sinh viên:');
+            while(!isValidModule(newModule)) {
+                newModule = prompt('Nhập lại module của sinh viên:');
+            }
+            if (newId === '' || newName === '' || newGrade === '' || newEmail === '' || newBirthdate === '' || isNaN(newModule)) {
+                alert('Bạn phải nhập đầy đủ thông tin!');
+            } else {
+                let newStudent = new Student(newId, newName, newGrade, newEmail, newBirthdate, newModule);
+                studentList.push(newStudent);
+                display();
+            }
+        }
+        function editInfor() {
+            let editIndex = -1;
+            let editId = prompt('Nhập id của sinh viên cần sửa thông tin:');
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === editId) {
+                    editIndex = i;
+                    break;
+                }
+            }
+            if (editIndex !== -1) {
+                let newId = prompt('Nhập id của sinh viên:');
+                while(!isValidId(newId)) {
+                    newId = prompt('Nhập lại id của sinh viên:');
+                }
+                let newName = prompt('Nhập tên của sinh viên:');
+                while(!isValidName(newName)) {
+                    newName = prompt('Nhập lại tên của sinh viên:');
+                }
+                let newGrade = prompt('Nhập lớp học của sinh viên:');
+                let newEmail = prompt('Nhập Email của sinh viên:');
+                let newBirthdate = prompt('Nhập ngày sinh của sinh viên:');
+                while(!isValidBirthdate(newBirthdate)) {
+                    newBirthdate = prompt('Nhập lại ngày sinh của sinh viên:');
+                }
+                let newModule = prompt('Nhập module của sinh viên:');
+                while(!isValidModule(newModule)) {
+                    newModule = prompt('Nhập lại module của sinh viên:');
+                }
+                if (newId === '' || newName === '' || newGrade === '' || newEmail === '' || newBirthdate === '' || isNaN(newModule)) {
+                    alert('Bạn phải nhập đầy đủ thông tin!');
+                } else {
+                    let newStudent = new Student(newId, newName, newGrade, newEmail, newBirthdate, newModule);
+                    studentList[editIndex] = newStudent;
+                    display();
+                }
+            } else {
+                alert('Mã học viên không tồn tại!');
+            }
+        }
+        function deleteStudent() {
+            let deleteIndex = -1;
+            let deleteId = prompt('Nhập id của sinh viên bạn muốn xoá khỏi danh sách:');
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === deleteId) {
+                    deleteIndex = i;
+                    break;
+                }
+            }
+            if (deleteIndex !== -1) {
+                let conf = confirm(`Bạn có muốn xoá học viên ${studentList[deleteIndex].name} ra khỏi danh sách?`);
+                if (conf) {
+                    studentList.splice(deleteIndex, 1);
+                } else {
+                    return;
+                }
+            } else {
+                alert('Mã học viên không tồn tại!');
+            }
+            display();
+        }
+        function isValidId(id) {
+            if (!id.includes('-')) {
+                return false;
+            }
+            let part = id.split('-');
+            if (part.length !== 2 || part[0] !== 'HV' || part[1].length !== 4) {
+                return false;
+            }
+            let number = part[1];
+            for (let i = 0; i < number.length; i++) {
+                if (number[i] < '0' || number[i] > '9') {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function isValidName(name) {
+            return name.length <= 50;
+        }
+        function isValidModule(module) {
+            if (module % 1 !== 0 || Number(module) < 1 || Number(module) > 6) {
+                return false;
+            }
+            return true;
+        }
+        function isValidBirthdate(birthdate) {
+            if (!birthdate.includes('/')) {
+                return false;
+            }
+            let part = birthdate.split('/');
+            if (part.length !== 3 || part[0].length != 2 || part[2].length !== 4) {
+                return false;
+            }
+            let day = Number(part[0]);
+            let month = Number(part[1]);
+            let year = Number(part[2]);
+            if (!Number.isInteger(day) || !Number.isInteger(month) || !Number.isInteger(year)) {
+                return false;
+            }
+            if (month < 1 || month > 12) {
+                return false;
+            }
+            let maxDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            if (year % 4 === 0) {
+                maxDays[1] = 29;
+            }
+            if (day < 1 || day > maxDays[month - 1]) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
