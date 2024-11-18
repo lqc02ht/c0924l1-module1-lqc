@@ -174,14 +174,14 @@
             let day = Number(part[0]);
             let month = Number(part[1]);
             let year = Number(part[2]);
-            if (!Number.isInteger(day) || !Number.isInteger(month) || !Number.isInteger(year)) {
+            if (day % 1 !== 0 || month % 1 !== 0 || year % 1 !== 0) {
                 return false;
             }
             if (month < 1 || month > 12) {
                 return false;
             }
             let maxDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            if (year % 4 === 0) {
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
                 maxDays[1] = 29;
             }
             if (day < 1 || day > maxDays[month - 1]) {
