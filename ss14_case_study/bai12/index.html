@@ -52,6 +52,45 @@
             document.getElementById('display').innerHTML = tableInfo;
         }
         function addStudent() {
+            let newStudent = createStudent();
+            if (newStudent) {
+                studentList.push(newStudent);
+                display();
+            } else {
+                alert('Bạn phải nhập đủ thông tin!');
+            }
+        }
+        function editInfor() {
+            let editId = prompt('Nhập id của sinh viên cần sửa thông tin:');
+            let editIndex = isIdInList(editId);
+            if (isIdInList(editId) !== -1) {
+                let newStudent = createStudent();
+                if (newStudent) {
+                    studentList[editIndex] = newStudent;
+                    display();
+                } else {
+                    alert('Bạn phải nhập đủ thông tin!');
+                }
+            } else {
+                alert('Mã học viên không tồn tại!');
+            }
+        }
+        function deleteStudent() {
+            let deleteId = prompt('Nhập id của sinh viên bạn muốn xoá khỏi danh sách:');
+            if (isIdInList(deleteId) !== -1) {
+                let deleteIndex = isIdInList(deleteId);
+                let conf = confirm(`Bạn có muốn xoá học viên ${studentList[deleteIndex].name} ra khỏi danh sách?`);
+                if (conf) {
+                    studentList.splice(deleteIndex, 1);
+                } else {
+                    return;
+                }
+            } else {
+                alert('Mã học viên không tồn tại!');
+            }
+            display();
+        }
+        function createStudent() {
             let newId = prompt('Nhập id của sinh viên:');
             while(!isValidId(newId)) {
                 newId = prompt('Nhập lại id của sinh viên:');
@@ -70,83 +109,28 @@
             while(!isValidModule(newModule)) {
                 newModule = prompt('Nhập lại module của sinh viên:');
             }
-            if (newId === '' || newName === '' || newGrade === '' || newEmail === '' || newBirthdate === '' || isNaN(newModule)) {
-                alert('Bạn phải nhập đầy đủ thông tin!');
-            } else {
-                let newStudent = new Student(newId, newName, newGrade, newEmail, newBirthdate, newModule);
-                studentList.push(newStudent);
-                display();
+            if (newName === '' || newGrade === '' || newEmail === '') {
+                return null;
             }
+            return new Student(newId, newName, newGrade, newEmail, newBirthdate, newModule);
         }
-        function editInfor() {
-            let editIndex = -1;
-            let editId = prompt('Nhập id của sinh viên cần sửa thông tin:');
+        function isIdInList(id) {
             for (let i = 0; i < studentList.length; i++) {
-                if (studentList[i].id === editId) {
-                    editIndex = i;
-                    break;
+                if (studentList[i].id === id) {
+                    return i;
                 }
             }
-            if (editIndex !== -1) {
-                let newId = prompt('Nhập id của sinh viên:');
-                while(!isValidId(newId)) {
-                    newId = prompt('Nhập lại id của sinh viên:');
-                }
-                let newName = prompt('Nhập tên của sinh viên:');
-                while(!isValidName(newName)) {
-                    newName = prompt('Nhập lại tên của sinh viên:');
-                }
-                let newGrade = prompt('Nhập lớp học của sinh viên:');
-                let newEmail = prompt('Nhập Email của sinh viên:');
-                let newBirthdate = prompt('Nhập ngày sinh của sinh viên:');
-                while(!isValidBirthdate(newBirthdate)) {
-                    newBirthdate = prompt('Nhập lại ngày sinh của sinh viên:');
-                }
-                let newModule = prompt('Nhập module của sinh viên:');
-                while(!isValidModule(newModule)) {
-                    newModule = prompt('Nhập lại module của sinh viên:');
-                }
-                if (newId === '' || newName === '' || newGrade === '' || newEmail === '' || newBirthdate === '' || isNaN(newModule)) {
-                    alert('Bạn phải nhập đầy đủ thông tin!');
-                } else {
-                    let newStudent = new Student(newId, newName, newGrade, newEmail, newBirthdate, newModule);
-                    studentList[editIndex] = newStudent;
-                    display();
-                }
-            } else {
-                alert('Mã học viên không tồn tại!');
-            }
-        }
-        function deleteStudent() {
-            let deleteIndex = -1;
-            let deleteId = prompt('Nhập id của sinh viên bạn muốn xoá khỏi danh sách:');
-            for (let i = 0; i < studentList.length; i++) {
-                if (studentList[i].id === deleteId) {
-                    deleteIndex = i;
-                    break;
-                }
-            }
-            if (deleteIndex !== -1) {
-                let conf = confirm(`Bạn có muốn xoá học viên ${studentList[deleteIndex].name} ra khỏi danh sách?`);
-                if (conf) {
-                    studentList.splice(deleteIndex, 1);
-                } else {
-                    return;
-                }
-            } else {
-                alert('Mã học viên không tồn tại!');
-            }
-            display();
+            return -1;
         }
         function isValidId(id) {
             if (!id.includes('-')) {
                 return false;
             }
-            let part = id.split('-');
-            if (part.length !== 2 || part[0] !== 'HV' || part[1].length !== 4) {
+            let parts = id.split('-');
+            if (parts.length !== 2 || parts[0] !== 'HV' || parts[1].length !== 4) {
                 return false;
             }
-            let number = part[1];
+            let number = parts[1];
             for (let i = 0; i < number.length; i++) {
                 if (number[i] < '0' || number[i] > '9') {
                     return false;
@@ -167,13 +151,13 @@
             if (!birthdate.includes('/')) {
                 return false;
             }
-            let part = birthdate.split('/');
-            if (part.length !== 3 || part[0].length != 2 || part[2].length !== 4) {
+            let parts = birthdate.split('/');
+            if (parts.length !== 3 || parts[0].length != 2 || parts[2].length !== 4) {
                 return false;
             }
-            let day = Number(part[0]);
-            let month = Number(part[1]);
-            let year = Number(part[2]);
+            let day = Number(parts[0]);
+            let month = Number(parts[1]);
+            let year = Number(parts[2]);
             if (day % 1 !== 0 || month % 1 !== 0 || year % 1 !== 0) {
                 return false;
             }
