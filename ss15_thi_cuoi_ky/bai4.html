@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Quản lý công nhân</h3>
+    <p id="display"></p>
+    <script>
+        // Khai báo lớp
+        class Person {
+            constructor(name, birthdate, address, salary, position) {
+                this.name = name;
+                this.birthdate = birthdate;
+                this.address = address;
+                this.salary = salary;
+                this.position = position;
+            }
+        }
+        // Khởi tạo đối tượng
+        let employee1 = new Person('Trương Tấn C', '11-11-1997', 'Quảng Nam', 4000, 'Leader');
+        let employee2 = new Person('Trương Tấn A', '11-11-1998', 'Đà Nẵng', 6000, 'President');
+        let employee3 = new Person('Trương Tấn B', '11-11-1999', 'Huế', 5000, 'CEO');
+        let employee4 = new Person('Trương Tấn G', '11-11-2002', 'Quảng Ninh', 1000, 'Fresher');
+        let employee5 = new Person('Trương Tấn F', '11-11-2000', 'Hải Dương', 2500, 'Junior');
+        let employeeList = [employee1, employee2, employee3, employee4, employee5];
+        display();
+        // hàm hiển thị
+        function display() {
+            for (let i = 0; i < employeeList.length - 1; i++) {
+                for (let j = i + 1; j < employeeList.length; j++) {
+                    if (employeeList[i].name > employeeList[j].name) {
+                        let swap = employeeList[i];
+                        employeeList[i] = employeeList[j];
+                        employeeList[j] = swap;
+                    }
+                }
+            }
+            let tableInfo = `<table border="1" style="border-collapse: collapse; text-align: center;">
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Địa chỉ</th>
+                    <th>Lương</th>
+                    <th>Chức vụ</th>
+                </tr>`;
+            for (let i = 0; i < employeeList.length; i++) {
+                tableInfo += 
+                `<tr>
+                    <td>${i + 1}</td>
+                    <td>${employeeList[i].name}</td>
+                    <td>${employeeList[i].birthdate}</td>
+                    <td>${employeeList[i].address}</td>
+                    <td>${employeeList[i].salary}</td>
+                    <td>${employeeList[i].position}</td>
+                </tr>`;
+            }
+            tableInfo += `</table><br>`;
+            document.getElementById('display').innerHTML = tableInfo;
+        }
+    </script>
+</body>
+</html>

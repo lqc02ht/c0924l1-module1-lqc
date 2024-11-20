@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nhập và hiển thị mảng
+        let size = prompt('Nhập số phần tử của mảng:');
+        while(size > 50 || size <= 0  || !(size % 1 === 0)) {
+            size = prompt('Nhập lại số phần tử của mảng:');
+        }
+        let numberArray = [];
+        for (let i = 0; i < size; i++) {
+            numberArray.push(+prompt(`Nhập phần tử thứ ${i + 1}:`));
+        }
+        alert(numberArray);
+        // hiển thị trung bình cộng
+        let sum = 0;
+        let count = 0;
+        for (let i = 0; i < numberArray.length; i++) {
+            if (numberArray[i] % 3 === 0) {
+                sum += numberArray[i];
+                count++;
+            }
+        }
+        alert(`Trung bình cộng các số chia hết cho 3 là: ${sum/count}`);
+    </script>
+</body>
+</html>
